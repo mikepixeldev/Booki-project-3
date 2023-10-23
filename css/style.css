@@ -15,11 +15,25 @@
 
 body {
   display: flex;
-  justify-content: center;
-  max-width: 1440px;
+  padding-bottom: 60.5px;
 }
 
-/************ Ajout des balise h1 à h3 ****************/
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  padding: 0px 50px;
+  flex-direction: column;
+  gap: 35px;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+/************ Texte & titres ****************/
 
 h1 {
   font-size: 22px;
@@ -41,14 +55,19 @@ p {
   font-weight: 400;
 }
 
-.main-container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 50px;
-  box-sizing: border-box;
+p.normal {
+  font-weight: 400;
 }
 
-/* ajout des attributs du header */
+.bold {
+  font-weight: 700;
+}
+
+p.big-text {
+  font-size: 18px;
+}
+
+/* Header */
 
 header {
   width: 100%;
@@ -57,14 +76,14 @@ header {
   justify-content: space-between;
 }
 
-/* ajout des attributs du logo */
+/* Logo */
 #logo {
   padding: 30px 50px;
   max-width: 100%;
   height: 19px;
 }
 
-/* ajout menu */
+/* Menu */
 
 nav {
   display: flex;
@@ -105,18 +124,14 @@ a {
   text-decoration: none;
 }
 
-/************ Ajout de l'Info Group ****************/
+/************ Info Group ****************/
 
 .recherche-filtre {
-  margin: 0px 35px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 0px 35px;
   max-width: 1340px;
-}
-
-.conteneur-headline,
-.conteneur-recherche,
-.conteneur-filtres,
-.conteneur-informations {
-  margin-bottom: 35px;
 }
 
 .search-bar,
@@ -184,27 +199,24 @@ input::placeholder {
 
 .conteneur-filtres {
   display: flex;
+  height: 50px;
   align-items: center;
   gap: 15px;
 }
 
 .boutons-filtre {
   display: flex;
-  height: 50px;
   align-items: center;
   gap: 15px;
 }
 
-.boutons-filtre h3 {
-  margin: 0;
-}
+/*********** Régler problème taille icon *****************/
 
 .boutons-filtre button {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 18px;
-  height: 42px;
+  font-size: 17px;
   padding: 4px 19px;
   border-radius: 25px;
   border: 2px solid var(--filter-bg-color);
@@ -243,7 +255,7 @@ input::placeholder {
   color: var(--main-bg-color);
 }
 
-/****** Hebergements And Populaires ***********/
+/****** Hebergements & Populaires ***********/
 .hebergements-and-populaires {
   display: flex;
   justify-content: space-between;
@@ -256,17 +268,14 @@ input::placeholder {
   box-sizing: border-box;
 }
 
-/****** Hebergements en chantier ***********/
+/****** Hebergements ***********/
 
 .hebergements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
   width: 65%;
-  float: left;
-  margin-right: 2%;
-}
-
-.hebergements-title,
-.hebergements-cards {
-  margin-bottom: 35px;
 }
 
 .hebergements-title {
@@ -277,38 +286,66 @@ input::placeholder {
 
 .hebergements-cards {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
 }
 
+a.cards-prop {
+  display: flex;
+}
+
 .hebergements-cards .card {
+  display: flex;
+  padding-bottom: 15px;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   box-sizing: border-box;
-  max-width: 250px;
+  min-width: 250px;
 }
 
 .hebergements-cards img {
   width: 100%;
   height: 124px;
-  border-radius: 20px;
+  border-radius: 20px 20px 0px 0px;
   object-fit: cover;
 }
 
 .hebergements-cards .card-content {
   width: 100%;
-  padding: 15px;
+  padding: 0px 15px;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-items: stretch;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
+.card-content .card-txt {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.card-content .card-title {
+  margin: 0;
+}
+
+.card-content .card-subtitle {
+  margin: 0;
+}
+
 .afficher-plus {
   display: inline-block;
-  margin-top: 20px;
-  text-align: left;
-  width: 100%;
-  height: auto;
-  text-decoration: none;
+  margin: 0;
 }
 
 .afficher-plus:hover {
@@ -362,16 +399,55 @@ input::placeholder {
   margin-bottom: 5px;
 }
 
-/********************* ajout du footer *********************/
+/********************* Activités *********************/
+
+#section-activites {
+  width: 1280px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#section-activites h2 {
+  align-self: flex-start;
+}
+
+#cards-activites {
+  display: flex;
+  gap: 30px;
+}
+
+.card-activites {
+  width: 299px;
+  height: 439px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-activites img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px 19px;
+}
+
+/********************* Footer *********************/
 
 footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   background-color: var(--main-bg-color);
-  margin: 50px;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
 }
 
 .footer-menu {
@@ -381,10 +457,6 @@ footer {
 
 .footer-menu:last-child {
   margin-right: 0;
-}
-
-h2 {
-  margin-bottom: 15px;
 }
 
 .footer-col {
