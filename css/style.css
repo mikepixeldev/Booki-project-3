@@ -16,6 +16,7 @@
 body {
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .main-container {
@@ -65,7 +66,6 @@ p.normal {
 
 p.big-text {
   font-size: 18px;
-  margin: 0;
 }
 
 /* Header */
@@ -91,6 +91,7 @@ nav {
 
 ul {
   list-style: none;
+  margin: 0;
 }
 
 .menu-ul {
@@ -98,28 +99,17 @@ ul {
   gap: 68px;
 }
 
-.menu-nav {
+.menu-ul li {
   display: flex;
-  gap: 68px;
-  position: relative;
-  padding-top: 2px;
+  align-items: center;
 }
 
-.menu-nav::before {
-  content: "";
-  position: absolute;
-  top: -24px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: transparent;
-  transition: width 0.3s ease-in-out, background-color 0.3s ease;
-  flex-shrink: 0;
+.menu-ul li:hover {
+  border-top: 2px solid var(--main-color);
 }
 
-.menu-nav:hover::before {
-  width: 100%;
-  background: var(--main-color);
+.menu-nav {
+  padding-bottom: 10px;
 }
 
 a {
@@ -372,8 +362,12 @@ a.cards-prop {
   align-self: stretch;
 }
 
-.card-content .card-title {
+.card-content {
   margin: 0;
+}
+
+.card-title {
+  margin-bottom: 0;
 }
 
 .card-content .card-subtitle {
@@ -460,7 +454,7 @@ a.cards-prop {
   height: 439px;
   border-radius: 20px;
   overflow: hidden;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 .card-activites img {

@@ -50,9 +50,22 @@
     list-style-type: none;
   }
 
+  li {
+    text-align: center;
+    width: 50%;
+  }
+
+  li a {
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-ul li:hover {
+    border-top: none;
+    border-bottom: 2px solid var(--main-color);
+  }
+
   .menu-nav {
-    display: flex;
-    flex: 1;
     padding-bottom: 15px;
   }
 
