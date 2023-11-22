@@ -318,7 +318,8 @@ input::placeholder {
 
 a.cards-prop {
   display: flex;
-  width: 30%;
+  flex: 1;
+  min-width: calc(33.333% - 20px);
 }
 
 .hebergements-cards .card {
